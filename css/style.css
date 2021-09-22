@@ -1,4 +1,609 @@
-h1 {
-	color:  red;
-	border:  1px solid red;
+/* обнуление отступов для всех элементов страницы */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* подключение шрифта №1 */
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* подключение шрифта №2 */
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* "шапка", включает в себя логотип, навигацию и заголовок сайта */
+.header {
+  width: 100%;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  position: relative;
+}
+
+.header-container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 28px;
+  padding-bottom: 120px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* установка затемнения через псевдоэлемент "::after"*/
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+/* класс, включающий в себя логотип и навигацию сайта */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  width: 1200px;
+}
+
+/* класс для логотипа "шапки" */
+.logo {
+  width: 180px;
+}
+
+/* класс списка меню навигации сайта */
+.menu-list {
+  display: flex;
+  list-style-type: none;
+}
+
+/* класс элементов меню навигации сайта */
+.menu-list-item {
+  margin-left: 35px;
+}
+
+/* класс ссылок элементов меню навигации сайта */
+.menu-link {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* для создания подчёркивания при наведении на элемент с классом "menu-link"*/
+.menu-link:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+/* класс для заголовка первого уровня - заголовка "шапки" сайта */
+.header-title {
+  font-family: "OpenSans-Bold", sans-serif;
+  width: 735px;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+
+  justify-content: center;
+  line-height: 1.7;
+  font-size: 45px;
+  color: #ffffff;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* класс для самого большого блока страницы, содержащего как основную, так и доп.информацию */
+.content {
+  display: flex;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1200px;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* класс для блока "main", содержащего основную информацию */
+.posts {
+  width: 793px;
+  margin-right: 120px;
+}
+
+/* класс для каждой из статей "article", содержащейся в блоке основной информации "main" */
+.post {
+  display: flex;
+  padding-bottom: 56px;
+}
+
+.post:last-child {
+  padding-bottom: 0;
+}
+
+/* класс для самого большого блока каждого из "article";
+в себя включает ненумерованный список из тегов,
+кликабельный заголовок блока "article",
+описание содержимого, на которое должна вести гиперссылка заголовка */
+.post-content {
+  width: 367px;
+  margin-left: 30px;
+}
+
+/* класс для фотографии каждой статьи "article" */
+.photo-article {
+  width: 381px;
+}
+
+/* класс для тегов, характеризующих содержимое статьи "article"
+блока основной информации "main" */
+.post-tags {
+  display: flex;
+  list-style-type: none;
+}
+
+/* класс для эелементов ненумерованного списка - гиперссылок тегов */
+.link-post-tag {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 14px;
+  color: #b59f5b;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* margin элементам списка */
+.item-post-tag {
+  margin-left: 18px;
+}
+
+/* левый отступ задавать не нужно */
+.post-tags > li:first-child {
+  margin-left: 0;
+}
+
+/* для создания подчёркивания при наведении на элемент класса "link-post-tag" */
+.link-post-tag:hover {
+  color: #b59f5b;
+  border-bottom: 2px solid #b59f5b;
+}
+
+/* класс для основной гиперссылки каждой статьи "article" */
+.link-post-title {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* класс для кликабельного заголовка статьи */
+.post-title {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 1.1;
+  color: #0f0d0e;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* класс для доп.информации, которая включает дату и время публикации и имя автора статьи */
+.post-information {
+  margin-bottom: 53px;
+}
+
+/* класс для даты и времени публикации статьи */
+.post-date {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 12px;
+  color: #888888;
+}
+
+/* класс для имени автора статьи */
+.post-author {
+  margin-left: 13px;
+
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 12px;
+  color: #000000;
+}
+
+/* класс для блока описания содержимого,
+на которое должна вести гиперссылка заголовка */
+.post-text {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 15px;
+  color: #0f0d0e;
+  line-height: 1.4;
+  width: 367px;
+}
+
+/* создание отступа между параграфами в блоке описание содержимого, 
+на которое должна вести гиперссылка заголовка */
+.post-text > p:first-child {
+  padding: 0 0 20px;
+}
+
+/* задаём ширину блоку с доп.информацией "aside" */
+.sidebar {
+  width: 270px;
+}
+
+/* класс для заголовков боковой панели*/
+.title-sidebar {
+  position: relative;
+
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 14px;
+  color: #0f0d0e;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* реализация элемента "подчёркивание" для блока "Новые посты" */
+.title-news::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 3px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #b59f5b;
+  opacity: 0.4;
+}
+
+/* класс для блока боковой панели,
+содержащего картинки, контент и доп.информацию
+об элементах боковой панели*/
+.post-sidebar {
+  display: flex;
+  margin-top: 15px;
+}
+
+/* второй класс для первого блока боковой панели,
+изменяем для него "margin-top" */
+.first-sidebar-post {
+  margin-top: 28px;
+}
+
+/* класс для размещаемых в боковой панели картинок */
+.sidebar-photo {
+  width: 71px;
+  margin-right: 28px;
+}
+
+/*класс для блока, включающего ифнормацию
+о дате публикации поста боковой панели */
+.post-sidebar-information {
+  display: flex;
+}
+
+/*класс для ифнормации о дате публикации поста боковой панели */
+.post-sidebar-date {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.54;
+
+  margin-bottom: 10px;
+}
+
+/* класс для гиперссылок информационных блоков боковой панели */
+.sidebar-link-title {
+  text-decoration: none;
+}
+
+/* класс для кликабельных заголовков информационных блоков боковой панели */
+.post-sidebar-title {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 14px;
+  line-height: 1.29;
+
+  color: #000000;
+  text-transform: uppercase;
+}
+
+/* создание эффекта при наведении на гиперссылки -
+заголовки информационных блоков боковой панели */
+.post-sidebar-title:hover {
+  color: #b59f5b;
+}
+
+/* класс для формы поиска */
+.search {
+  margin-top: 59px;
+}
+
+/* сокрытие описания для элементов формы - поля и кнопки поиска*/
+.search-field,
+.button {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+}
+
+/* класс для поля ввода поиска - элемента "input" */
+.search-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 223px;
+  height: 49px;
+
+  padding-left: 19px;
+
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 13px;
+
+  border: none;
+  background-color: #f4f7f6;
+}
+
+/* задаём параметры внешней рамки для "input" в фокусном состоянии */
+.search-input:focus {
+  outline: 1px solid #b59f5b;
+}
+
+/* класс для самой кнопки поиска */
+.search-button {
+  position: absolute;
+  width: 49px;
+  height: 49px;
+
+  color: #ffffff;
+  background-color: #b59f5b;
+  border: none;
+
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/search.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center center;
+}
+
+/* класс для задания внешнего отступа блоков section */
+.section-sidebar {
+  margin-top: 60px;
+}
+
+/* сокрытие описания для элементов формы - Поля для email-адреса и кнопки Подписаться*/
+.form-field,
+.button-mailing {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+}
+
+/* создание отступа для формы рассылки на email-адреса */
+.form {
+  margin-top: 21px;
+}
+
+/* класс для поля ввода формы рассылки на email-адреса */
+.form-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 270px;
+  height: 49px;
+
+  padding-left: 19px;
+  padding-right: 19px;
+
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 13px;
+
+  border: none;
+  background-color: #f4f7f6;
+}
+
+/* задаём параметры внешней рамки для "input" в фокусном состоянии */
+.form-input:focus {
+  outline: 1px solid #b59f5b;
+}
+
+/* класс для кнопки "Подписаться" формы рассылки на email-адреса */
+.form-button {
+  margin-top: 21px;
+  width: 100%;
+  border: none;
+}
+
+/* класс для текста внутри кнопки "Подписаться" формы рассылки на email-адреса */
+.button-subscribe {
+  display: block;
+  padding-top: 18px;
+  padding-bottom: 18px;
+
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background-color: #b59f5b;
+}
+
+/* класс для создания эффекта при наведении
+на кнопку "Подписаться" формы рассылки на email-адреса */
+.button-subscribe:hover {
+  background-color: #323232;
+}
+
+/* класс для списка тегов сайта */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+/* класс для элементов ненумерованного списка тегов - реализация рамочки */
+.tag-item {
+  border: 3px solid #eeeeee;
+  margin: 0 4px 4px 0;
+  padding: 2px 13px;
+}
+
+.tag-link-top {
+  margin: 0 0 4px 0;
+}
+
+/* класс для создания эффекта при наведении на элемент с классом "tag-item" -
+изменение цвета рамки */
+.tag-item:hover {
+  border: 3px solid #b59f5b;
+}
+
+/* класс для гиперссылок раздела "Теги" */
+.tag-link {
+  text-decoration: none;
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 12px;
+  color: #0f0d0e;
+  text-transform: uppercase;
+}
+
+/* класс для элементов ненумерованного списка тегов - реализация рамочки */
+.themes-item {
+  list-style: none;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #eeeeee;
+}
+
+/* добавление значения "padding-top" дочерним элементам класса "themes-item", 
+начиная со второго */
+.themes-item:nth-child(n + 2) {
+  padding-top: 12px;
+}
+
+/* класс для гиперссылок списка "Темы" */
+.themes-link {
+  text-decoration: none;
+
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 14px;
+  color: #000000;
+
+  margin-bottom: 20px;
+}
+
+/* класс для создания эффекта при наведении на элемент с классом "themes-link" -
+изменение цвета текста */
+.themes-link:hover {
+  color: #b59f5b;
+}
+
+/* класс для верхних индексов гиперссылок списка "Темы" */
+.number-themes {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 12px;
+  color: #b59f5b;
+  position: relative;
+  bottom: 5px;
+}
+
+.footer {
+  text-align: center;
+  width: 1167px;
+  background-color: #f4f7f6;
+  margin: 0 auto;
+}
+
+.socials {
+  height: 83px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 73px;
+  padding: 31px 476px;
+}
+
+/* задал отступ элементам "li" */
+.socials-item {
+  margin-right: 27px;
+}
+
+/* обнулил последний отступ справа у элементов "li" */
+address li:last-child {
+  margin-right: 0;
+}
+
+/* убрал отступ справа у элементов <a> */
+.socials-link {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.socials-link-twitter {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/004-twitter.svg");
+}
+
+.socials-link-pinterest {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg");
+}
+
+.socials-link-facebook {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg");
+}
+
+.socials-link-instagram {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg");
+}
+
+.socials-link-tumblr {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
+}
+
+.socials-link-text {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+}
+
+.copyright {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.copyright-link {
+  text-decoration: none;
+  color: #999999;
+  font-family: "Open-Sans-Bold", sans-serif;
+  font-size: 12px;
 }
