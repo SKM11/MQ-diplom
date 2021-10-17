@@ -26,15 +26,12 @@
 /* "шапка", включает в себя логотип, навигацию и заголовок сайта */
 .header {
   width: 100%;
-
   text-align: center;
   text-transform: uppercase;
-
   background-image: url(../images/banner-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-
   position: relative;
 }
 
@@ -106,14 +103,15 @@
 /* класс для заголовка первого уровня - заголовка "шапки" сайта */
 .header-title {
   font-family: "OpenSans-Bold", sans-serif;
-  width: 735px;
+  width: 100%;
   margin-top: 100px;
   margin-right: auto;
   margin-left: auto;
 
   justify-content: center;
-  line-height: 1.7;
-  font-size: 45px;
+  line-height: 1.1;
+  font-size: 1.5em;
+  font-weight: normal;
   color: #ffffff;
 
   position: relative;
@@ -127,7 +125,7 @@
   padding-bottom: 64px;
   padding-left: 15px;
   padding-right: 15px;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .container-content {
@@ -170,7 +168,8 @@
 /* класс для трендов, лежат под header */
 .trend-items {
   display: flex;
-  width: 100vw;
+  width: 100%;
+  /*justify-content: space-between; не работает */
 }
 
 .trend-title {
@@ -187,6 +186,7 @@
   padding-right: 22px;
   padding-bottom: 16px;
   display: flex;
+
   flex: 1;
   position: relative;
 }
@@ -205,7 +205,7 @@
 
 .trend-content {
   border: 4px solid #D5C69F;
-  width: 367px;
+  width: 100%;
   margin: 0 auto;
   padding-top: 39px;
   padding-left: 32px;
@@ -219,7 +219,7 @@
   background-image: url("../images/trend1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-right: 0.3%;
+  margin-right: 0.4%;
   align-items: flex-end;
   min-height:  320px;
 }
@@ -228,7 +228,7 @@
   background-image: url("../images/trend2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-right: 0.3%;
+  margin-right: 0.4%;
   align-items: flex-end;
   min-height:  320px;
 }
@@ -237,7 +237,7 @@
   background-image: url("../images/trend3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-right: 0.3%;
+  margin-right: 0.4%;
   align-items: flex-end;
   min-height:  320px;
 }
@@ -680,11 +680,12 @@
   font-weight: 700;
   margin-bottom: 15px;
 }
+
 .shop-item-descr > p {
   font-size: 15px;
   line-height: 1.5;
   color: #0F0D0E;
-  font-family: "Open Sans";
+  font-family: "OpenSans-Regular", sans-serif;
 }
 
 .shop-item-link {
@@ -816,6 +817,149 @@ address li:last-child {
 .copyright-link {
   text-decoration: none;
   color: #999999;
-  font-family: "Open-Sans-Bold", sans-serif;
+  font-family: "OpenSans-Bold", sans-serif;
   font-size: 12px;
+}
+
+
+
+
+.menu__button {
+    width: 1.4em;
+    height: 1em;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    font-size: 25px;
+    position: relative;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.menu__button-label {
+    width: 100%;
+    height: 20%;
+    margin-top: -0.25em;
+    border-radius: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.menu__button:before {
+    top: 0;
+}
+
+.menu__button:before, .menu__button:after {
+    content: "";
+    width: 100%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+}
+
+
+
+
+
+
+@media (min-width: 641px) {
+.menu__button {
+    display: none;
+  }
+.menu {
+  text-align: right;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 640px) {
+
+.menu-list {
+  display: none;
+  }
+
+.header {
+  }
+
+.header-container: {
+}
+
+.header-title {
+  line-height: 1.1;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.trend-items {
+  flex-direction: column;
+  }
+
+ .trend-post {
+  margin-bottom: 1%;
+ }
+
+ .container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:  100%;
+}
+
+.content {
+  flex-direction: column;
+}
+
+.sidebar {
+  width: 100%;
+}
+
+.post {
+  display: flex;
+  padding-bottom: 56px;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.posts {
+  width:  100%;
+}
+
+.photo-article {
+  width: 100%;
+}
+
+.post-content {
+  width: 100%;
+  margin: 0;
+}
+
+.post-text {
+  width: 100%;
+}
+
+.footer {
+  width:  100%;
+  background-color: #fff;
+  padding-left:  4%;
+  padding-right:  4%;
+}
+
+.socials {
+  
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 73px;
+  padding: 0;
+  background-color: #f4f7f6;
+}
+
 }
