@@ -861,7 +861,7 @@ address li:last-child {
 
 @media (min-width: 641px) and (max-width: 1199px) {
   .menu__button {
-    display: span;
+    display: block;
   }
   .menu {
     text-align: right;
@@ -916,7 +916,7 @@ address li:last-child {
 
 @media (max-width: 640px) {
   .menu__button {
-    display: span;
+    display: block;
   }
   .menu {
     text-align: right;
