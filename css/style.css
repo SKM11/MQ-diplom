@@ -821,6 +821,7 @@ address li:last-child {
 }
 
 .menu__button {
+  display: none;
   width: 1.4em;
   height: 1em;
   border: none;
