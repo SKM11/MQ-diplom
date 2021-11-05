@@ -169,7 +169,6 @@
 .trend-items {
   display: flex;
   width: 100%;
-  /*justify-content: space-between; не работает */
 }
 
 .trend-title {
@@ -669,6 +668,7 @@
   border: 4px solid #d5c69f;
   font-family: "OpenSans-Regular", sans-serif;
 }
+
 .shop-item-descr {
   font-size: 15px;
   margin-bottom: 30px;
@@ -766,7 +766,7 @@
 }
 
 /* обнуление последнего отступа справа у элементов "li" */
-address li:last-child {
+.address li:last-child {
   margin-right: 0;
 }
 
@@ -859,6 +859,7 @@ address li:last-child {
   left: 0;
 }
 
+
 @media (min-width: 641px) and (max-width: 1199px) {
   .menu__button {
     display: block;
@@ -888,9 +889,16 @@ address li:last-child {
     min-width: 40%;
   }
 
-  .shop-item:last-child {
-    max-width: 50%;
-    padding-top: 2%;
+   .shop-items-wrapper {
+    display: flex;
+    max-width: 1199px;
+    flex-wrap: wrap;
+  }
+
+  .shop-item {
+    display: flex;
+    flex: 1;
+    min-width: 40%;
   }
 
   .header-container {
@@ -907,10 +915,21 @@ address li:last-child {
   }
 
   .posts {
-    /* max-width: calc(100% - 367px); */
+    max-width: calc(100% - 367px);
     margin-right: 0;
     flex-direction: column;
     align-items: center;
+  }
+
+  .socials {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+
+  .shop-item:last-child {
+    max-width: 50%;
+    padding-top: 2%;
   }
 }
 
@@ -944,6 +963,13 @@ address li:last-child {
 
   .trend-post {
     margin-bottom: 1%;
+  }
+
+  .shop-item {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .container-content {
@@ -999,5 +1025,18 @@ address li:last-child {
     margin: 0 auto 73px;
     padding: 0;
     background-color: #f4f7f6;
+  }
+
+  .shop-items-wrapper {
+    flex-direction: column;
+  }
+
+  .shop-item-image {
+    width: 100%;
+  }
+
+
+.shop-item-photo {
+  width: 100%;
   }
 }
