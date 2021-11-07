@@ -939,6 +939,18 @@
   .bkg-lemons-vitamins {
     margin-top: 0.25em;
   }
+
+    .menu__button {
+    display: block;
+  }
+  .menu {
+    text-align: right;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
 }
 
 @media (max-width: 640px) {
